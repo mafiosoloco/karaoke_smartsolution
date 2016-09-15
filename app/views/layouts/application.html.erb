@@ -11,6 +11,14 @@
 </head>
 <body>
 <%= render "shared/menu" %>
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+       <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %> alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+          <%= value %>
+          </div>
+        <% end %>
 <%= yield %>
 
 </body>
